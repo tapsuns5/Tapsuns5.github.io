@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jocks & Javascript</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="https://i0.wp.com/tylerpalmer5.com/wp-content/uploads/2022/12/cropped-profile-pic-2.png?resize=300%2C300&ssl=1" alt="Jocks & Javascript Logo" class="logo">
+            <h1>Tyler Palmer</h1>
+            <p class="description">Cleats → Code. Uniting the passions of sports and technology. Join for insights,
+                information, and a like-minded community of sports & tech enthusiasts.</p>
+            <p class="author">By Tyler Palmer • Launched 6 months ago</p>
+            <form class="subscribe-form" action="subscribe.php" method="POST">
+                <input type="email" placeholder="Your email" class="email-input">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </form>
+            <button class="no-thanks-button">No thanks</button>
+        </div>
+    </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <p>Email submitted successfully!</p>
+            </div>
+        </div>
+        
+        <p id="errorMessage" class="hidden">Please enter a valid email address.</p>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
