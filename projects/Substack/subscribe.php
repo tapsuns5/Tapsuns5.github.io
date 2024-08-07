@@ -1,9 +1,27 @@
 <?php
+require 'vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+// Load environment variables from .env file
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Determine the environment (default to production if not set)
+$environment = $_ENV['ENVIRONMENT'] ?? 'production';
+
 // Database configuration
-$servername = "localhost";
-$username = "tapsuns5";
-$password = "FL6yiNn3-K8wkGa4qjjD";
-$dbname = "substack_clone";
+if ($environment === 'development') {
+    $servername = $_ENV['DB_HOST'];
+    $username = $_ENV['DB_USERNAME'];
+    $password = $_ENV['DB_PASSWORD'];
+    $dbname = $_ENV['DB_NAME'];
+} else {
+    $servername = $_ENV['PROD_DB_HOST'];
+    $username = $_ENV['PROD_DB_USERNAME'];
+    $password = $_ENV['PROD_DB_PASSWORD'];
+    $dbname = $_ENV['PROD_DB_NAME'];
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
